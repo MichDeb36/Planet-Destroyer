@@ -6,29 +6,29 @@ using TMPro;
 
 public class Game : MonoBehaviour
 {
-    public List<GameObject> CollectionsPlanets = new List<GameObject>();
-    public TextMeshProUGUI textTime;
-    public TextMeshProUGUI textScore;
-    public TextMeshProUGUI textNumberDestroyPlanets;
-    public TextMeshProUGUI textLimitPlanets;
-    public GameObject swordLeft;
-    public GameObject swordRight;
-    public GameObject player;
-    public AudioSource clockSound;
+    [SerializeField]  List<GameObject> CollectionsPlanets = new List<GameObject>();
+    [SerializeField]  TextMeshProUGUI textTime;
+    [SerializeField]  TextMeshProUGUI textScore;
+    [SerializeField]  TextMeshProUGUI textNumberDestroyPlanets;
+    [SerializeField]  TextMeshProUGUI textLimitPlanets;
+    [SerializeField]  GameObject swordLeft;
+    [SerializeField]  GameObject swordRight;
+    [SerializeField]  GameObject player;
+    [SerializeField]  AudioSource clockSound;
 
     [Header("Difficulty settings")]
-    public int LimitPlanets = 100;
-    public int MaxPlanets = 5;
+    [SerializeField] int LimitPlanets = 100;
+    [SerializeField] int MaxPlanets = 5;
 
     [Header("Planet creation settings")]
     [Range(0, 1)]
-    public float widthRangeFromPlayer = 0.5f;
-    public float maxDistanceFromPlayer = 1f;
-    public float minDistanceFromPlayer = 0.5f;
-    public float maxHeightCreatePlanet = 1f;
-    public float minHeightCreatePlanet = 0f;
-    public float maxForcePlanet = 0.8f;
-    public float minForcePlanet = 0.4f;
+    [SerializeField] float widthRangeFromPlayer = 0.5f;
+    [SerializeField] float maxDistanceFromPlayer = 1f;
+    [SerializeField] float minDistanceFromPlayer = 0.5f;
+    [SerializeField] float maxHeightCreatePlanet = 1f;
+    [SerializeField] float minHeightCreatePlanet = 0f;
+    [SerializeField] float maxForcePlanet = 0.8f;
+    [SerializeField] float minForcePlanet = 0.4f;
 
     private List<GameObject> planets = new List<GameObject>();
     private int score = 0;

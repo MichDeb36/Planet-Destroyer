@@ -5,13 +5,12 @@ using UnityEngine;
 
 public class Planet : MonoBehaviour
 {
-    public GameObject planet;
+    [SerializeField]  GameObject planet;
 
     private AudioSource explosionSound;
     private Animator animator;
     private bool destroyed = false;
     private bool toRemove = false;
-
 
     void Start()
     {
@@ -19,7 +18,6 @@ public class Planet : MonoBehaviour
         explosionSound = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
     }
-
     IEnumerator MainCoroutine()
     {
         while(true)
@@ -31,19 +29,18 @@ public class Planet : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
     }
-
-    public void playExplosionSound()
+    public void PlayExplosionSound()
     {
         explosionSound.Play();
     }
 
-    public void killPlanet()
+    public void KillPlanet()
     {
         planet.SetActive(false);
         destroyed = true;
         toRemove = true;
     }
-    public void activeExplosion()
+    public void ActiveExplosion()
     {
         destroyed = true;
         animator.SetTrigger("Explosion");

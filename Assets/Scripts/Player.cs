@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Transform startingPoint;
-    public GameObject player;
-    public Camera playerHead;
+    [SerializeField] private Transform startingPoint;
+    [SerializeField] private GameObject player;
+    [SerializeField] private Camera playerHead;
 
     public void ResetPosition()
     {
@@ -16,7 +16,4 @@ public class Player : MonoBehaviour
         Vector3 differenceVector = startingPoint.position - playerHead.transform.position;
         player.transform.position += differenceVector;
     }
-
-
-
 }

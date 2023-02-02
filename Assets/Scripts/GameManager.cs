@@ -7,9 +7,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public float bonusEnergyDrink = 2.0f;
-    public float bonusMagnesia = 1.2f;
-    public float speedCriterion = 0.5f;
+    [SerializeField] private float bonusEnergyDrink = 2.0f;
+    [SerializeField] private float bonusMagnesia = 1.2f;
+    [SerializeField] private float speedCriterion = 0.5f;
 
     private int score = 0;
     private string activeBonus = "";

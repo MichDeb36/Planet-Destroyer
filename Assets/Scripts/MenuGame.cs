@@ -6,9 +6,9 @@ using TMPro;
 public class MenuGame : MonoBehaviour
 {
 
-    public TextMeshProUGUI textScore;
-    public TextMeshProUGUI textBonus;
-    public GameObject player;
+    [SerializeField] private TextMeshProUGUI textScore;
+    [SerializeField] private TextMeshProUGUI textBonus;
+    [SerializeField] private GameObject player;
 
     void Start()
     {

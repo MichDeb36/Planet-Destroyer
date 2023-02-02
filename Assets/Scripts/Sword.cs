@@ -1,17 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Collections;
 using UnityEngine.XR.Interaction.Toolkit;
-
 
 public class Sword : MonoBehaviour
 {
     [Range (0, 1)]
-    public float intensity;
-    public float duration;
-    public XRBaseController controller;
-    public GameObject sword;
+    [SerializeField] private float intensity;
+    [SerializeField] private float duration;
+    [SerializeField] private XRBaseController controller;
+    [SerializeField] private GameObject sword;
 
     private float bonusEnergyDrink;
     private float bonusMagnesia;
@@ -35,12 +33,11 @@ public class Sword : MonoBehaviour
             sword.transform.localScale = new Vector3(bonusMagnesia, bonusMagnesia, bonusMagnesia);
         }
     }
-
     /*checking whether the object is a planet,
                whether it has not been hit before,
                whether it has not been previously destroyed,
                whether the impact had a minimum value of the velocity criterion*/
-    public void pointsCalculation(Collider target)
+    public void PointsCalculation(Collider target)
     {
         if (target.tag == "Planet" && IdObject != target.GetInstanceID())
         {
@@ -49,7 +46,7 @@ public class Sword : MonoBehaviour
                 float v = Vector3.Magnitude(this.transform.position - oldPosition) * 100;
                 if (v > speedCriterion)
                 {
-                    target.GetComponent<Planet>().activeExplosion();
+                    target.GetComponent<Planet>().ActiveExplosion();
                     IdObject = target.GetInstanceID();
                     numberDestroyPlanet++;
                     if (bonus == "EnergyDrink") //point multiplier bonusEnergyDrink, force effect
@@ -62,19 +59,15 @@ public class Sword : MonoBehaviour
             }
         }
     }
-
-
     private void OnTriggerEnter(Collider target)
     {
-        pointsCalculation(target);
+        PointsCalculation(target);
         SendHaptic(controller);
     }
-
     private void SendHaptic(XRBaseController controller)
     {
         controller.SendHapticImpulse(intensity, duration);
     }
-
     public int GetScore()
     {
         return score;
@@ -91,7 +84,6 @@ public class Sword : MonoBehaviour
     {
         numberDestroyPlanet = 0;
     }
-
     void Update()
     {
         oldPosition = this.transform.position;

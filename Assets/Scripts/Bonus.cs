@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Bonus : MonoBehaviour
 {
-    public GameObject obj;
-    public AudioSource activationSound;
+    [SerializeField] private GameObject obj;
+    [SerializeField] private AudioSource activationSound;
 
     public void HiddenObject()
     {

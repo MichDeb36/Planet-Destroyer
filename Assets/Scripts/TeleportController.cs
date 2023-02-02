@@ -8,13 +8,13 @@ using UnityEngine.Events;
 public class TeleportController : MonoBehaviour
 {
 
-    public GameObject controller;
-    public GameObject teleportation;
+    [SerializeField] private GameObject controller;
+    [SerializeField] private GameObject teleportation;
 
-    public InputActionReference teleportActivationReference;
+    [SerializeField] private InputActionReference teleportActivationReference;
 
-    public UnityEvent onTeleportActivate;
-    public UnityEvent onTeleportCancel;
+    [SerializeField] private UnityEvent onTeleportActivate;
+    [SerializeField] private UnityEvent onTeleportCancel;
 
     // Start is called before the first frame update
     void Start()
