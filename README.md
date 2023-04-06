@@ -3,3 +3,4 @@ Planet Destroyed is a game inspired by the fruit ninja VR arcade game. The playe
 Unity version: 2020.3.26 <br/>
 Tested on VR headset: Oculus Quest 2 <br/>
 Intended for a headset that supports OpenXR <br/>
+Game presentation on youtube: https://youtu.be/f3z7cOb7YoQ
